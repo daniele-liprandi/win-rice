@@ -43,7 +43,9 @@ bars:
         - "clock"
         - "volume"
         - "media"
+        - "active_window"
       right:
+        - "disk"
         - "cpu"
         - "memory"
         - "traffic"
@@ -53,6 +55,16 @@ bars:
         - "power_plan"
         - "power_menu"
 widgets:
+  disk:
+    type: "yasb.disk.DiskWidget"
+    options:
+        label: "{volume_label} {space[used][percent]}"
+        label_alt: "{volume_label} {space[used][gb]} / {space[total][gb]}"
+        volume_label: "D"
+        update_interval: 1200 
+        callbacks:
+          on_middle: "do_nothing"
+          on_right: "exec explorer D:\\" 
   cpu:
     type: "yasb.cpu.CpuWidget"
     options:
@@ -70,31 +82,35 @@ widgets:
         color: "black"
         radius: 5
         offset: [0, 0]
+  active_window:
+    type: "yasb.active_window.ActiveWindowWidget"
+    options:
+      label: "{win[title]}"
+      label_no_window: "No selected window"
+      label_icon: true
+      label_icon_size: 14
+      max_length: 56
+      max_length_ellipsis: "..."
+      monitor_exclusive: true
+      callbacks:
+        on_left: "focus_window"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
-      label: "<span>\uefc5</span> {virtual_mem_used}/{virtual_mem_total}"
-      label_alt: "<span>\uefc5</span>"
+      label: "<span>\uefc5</span>"
+      label_alt: "<span>\uefc5</span> {virtual_mem_used}/{virtual_mem_total}"
       update_interval: 5000
       callbacks:
         on_left: "do_nothing"
         on_middle: "do_nothing"
         on_right: "toggle_label"
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 5
-        offset: [0, 0]
   traffic:
     type: "yasb.traffic.TrafficWidget"
     options:
-      label: "<span class='download'>\udb81\udf2e {download_speed}</span><span class='upload'>{upload_speed} \udb81\udf37</span>"
-      label_alt: "<span class='download'>\udb81\udf2e</span>|<span class='upload'>\udb81\udf37</span>"
+      label: "<span>\udb81\udf2e\udb81\udf37</span>"
+      label_alt: "<span class='download'>\udb81\udf2e {download_speed}</span><span class='upload'>{upload_speed} \udb81\udf37</span>"
       update_interval: 1000
       menu:
         round_corners: false
@@ -104,16 +120,6 @@ widgets:
       callbacks:
         on_left: "toggle_menu"
         on_right: "toggle_label"
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 5
-        offset: [0, 0]
   komorebi_active_layout:
     type: "komorebi.active_layout.ActiveLayoutWidget"
     options:
@@ -155,16 +161,6 @@ widgets:
         direction: "down"
         offset_top: true
         show_layout_icons: true
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 5
-        offset: [0, 0]
   komorebi_workspaces:
     type: "komorebi.workspaces.WorkspaceWidget"
     options:
@@ -173,16 +169,6 @@ widgets:
       label_zero_index: false
       hide_empty_workspaces: true
       hide_if_offline: true
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 5
-        offset: [0, 0]
   media:
     type: "yasb.media.MediaWidget"
     options:
@@ -221,16 +207,6 @@ widgets:
         max_title_size: 40
         max_artist_size: 20
         show_source: true
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 5
-        offset: [0, 0]
   systray:
     type: "yasb.systray.SystrayWidget"
     options:
@@ -242,16 +218,6 @@ widgets:
       show_battery: false
       show_volume: false
       show_network: false
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-      container_shadow:
-        enabled: false
-        color: "black"
-        radius: 5
-        offset: [0, 0]
   weather:
     type: "yasb.weather.WeatherWidget"
     options:
@@ -292,16 +258,6 @@ widgets:
         direction: "down"
         icon_size: 40
         offset_top: true
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 5
-        offset: [0, 0]
   clock:
     type: "yasb.clock.ClockWidget"
     options:
@@ -317,16 +273,6 @@ widgets:
       callbacks:
         on_left: "toggle_calendar"
         on_right: "toggle_label"
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 5
-        offset: [0, 0]
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
@@ -348,16 +294,6 @@ widgets:
       callbacks:
         on_left: "toggle_volume_menu"
         on_right: "toggle_mute"
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 5
-        offset: [0, 0]
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
@@ -369,16 +305,6 @@ widgets:
         on_left: "toggle_notification"
         on_middle: "clear_notifications"
         on_right: "toggle_label"
-      container_padding:
-        top: 0
-        left: 10
-        bottom: 0
-        right: 10
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 5
-        offset: [0, 0]
   bluetooth:
     type: "yasb.bluetooth.BluetoothWidget"
     options:
@@ -390,16 +316,6 @@ widgets:
         on_left: "toggle_menu"
         on_middle: "toggle_bluetooth"
         on_right: "toggle_label"
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 5
-        offset: [0, 0]
   komorebi_control:
     type: "komorebi.control.KomorebiControlWidget"
     options:
@@ -421,16 +337,6 @@ widgets:
         direction: 'down'
         offset_top: 6
         offset_left: 0
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 5
-        offset: [0, 0]
   recycle_bin:
     type: "yasb.recycle_bin.RecycleBinWidget"
     options:
@@ -440,34 +346,14 @@ widgets:
         on_left: "exec explorer.exe shell:RecycleBinFolder"
         on_middle: "empty_recycle_bin"
         on_right: "toggle_label"
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 5
-        offset: [0, 0]
   power_plan:
     type: "yasb.power_plan.PowerPlanWidget"
     options:
-      label: "<span>\uf0e7</span> {active_plan}"
+      label: "<span>\uf0e7</span>{active_plan}"
       callbacks:
         on_left: "toggle_menu"
         on_middle: "do_nothing"
         on_right: "toggle_label"
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 5
-        offset: [0, 0]
   power_menu:
     type: "yasb.power_menu.PowerMenuWidget"
     options:
@@ -483,11 +369,6 @@ widgets:
         shutdown: ["\ue7e8", "Shut Down"]
         restart: ["\ue777", "Restart"]
         cancel: ["\ue711", "Cancel"]
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 5
-        offset: [0, 0]
   notes:
     type: "yasb.notes.NotesWidget"
     options:
@@ -515,11 +396,6 @@ widgets:
         on_left: "toggle_menu"
         on_middle: "do_nothing"
         on_right: "toggle_label"
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 5
-        offset: [0, 0]
   github:
     type: "yasb.github.GithubWidget"
     options:

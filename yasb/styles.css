@@ -11,6 +11,54 @@
   padding: 6px 0;
 }
 
+.widget {
+    background-color: rgba(25, 25, 25, 0.8);
+    border: none;
+    border-radius: 11px;
+    outline: none;
+    margin-left: 8px;
+    min-width: 30px;
+}
+
+.widget .label {
+    padding: 1px 2px 1px 2px;
+    font-family: JetBrainsMono NF;
+}
+.widget .label.alt {
+    padding: 1px 8px 1px 8px;
+}
+
+
+/* --- WIDGET STYLES --- */
+
+/* ACTIVE WINDOW TITLE */
+.active-window-widget {
+  background-color: rgba(17, 17, 27, 0.8);
+  border: 0px solid #313244;
+  border-radius: 11px;
+  margin-left: 6px;
+  outline: none;
+  padding: 2px 12px 0 12px;
+}
+
+/* DISK */
+.disk-widget {
+  background-color: rgba(139, 233, 253, 0.8);
+  border: 0px solid #1e1e2e;
+  border-radius: 11px;
+  margin-left: 6px;
+  outline: none;
+  width: 75px;
+}
+.disk-widget .label {
+  font-size: 12px;
+  font-weight: bold;
+  color: #1e1e2e;
+  padding: 2px 0 0 0;
+  width: 50px;
+  min-width: 50px;
+  max-width: 50px;
+}
 
 /* CPU */
 .cpu-widget {
@@ -19,16 +67,15 @@
   border-radius: 11px;
   margin-left: 6px;
   outline: none;
-  width: 90px;
-  min-width: 90px;
-  max-width: 90px;
+  width: 85px;
+  min-width: 85px;
+  max-width: 85px;
 }
 .cpu-widget .label {
-  font-family: "JetBrainsMono NF";
   font-size: 12px;
   font-weight: bold;
   color: #1e1e2e;
-  padding: 2px 0 0 0;
+  padding: 2px 5px 0 0;
   width: 50px;
   min-width: 50px;
   max-width: 50px;
@@ -42,10 +89,9 @@
   max-width: 100%;
 }
 .cpu-widget .icon {
-  font-family: "JetBrainsMono NF";
   font-weight: bold;
   font-size: 16px;
-  padding: 0 4px 0 0;
+  padding: 0 4px 0 6px;
   color: #1e1e2e;
 }
 
@@ -54,37 +100,41 @@
   background-color: rgba(203, 166, 247, 0.8);
   border: 0px solid #1e1e2e;
   border-radius: 11px;
-  margin-left: 6px;
   outline: none;
 }
 .memory-widget .label {
-  font-family: "JetBrainsMono NF";
+  font-size: 16px;
+  padding: 2px 2px 0 12px;
+  text-align: center;
+}
+.memory-widget .label.alt {
   font-size: 12px;
   font-weight: bold;
   color: #1e1e2e;
-  padding: 2px 12px 0 2px;
-}
-.memory-widget .label.alt {
-  font-size: 16px;
-  padding: 2px 12px 0 12px;
-  text-align: center;
+  padding: 2px 6px 0 12px;
 }
 .memory-widget .icon {
-  font-family: "JetBrainsMono NF";
   color: #1e1e2e;
   font-size: 16px;
   font-weight: bold;
   padding-right: 12px;
-  padding-left: 12px;
+  padding-left: 6px;
 }
 
 /* TRAFFIC */
 .traffic-widget {
-  width: 220px;
-  min-width: 220px;
-  max-width: 220px;
+  background-color: rgba(166, 227, 161, 0.8);
+  border: 0px solid #1e1e2e;
+  border-radius: 11px;
+  margin-left: 6px;
+  font-weight: bold;
   outline: none;
 }
+.traffic-widget .label {
+  padding: 2px 8px 0 8px;
+  font-size: 14px;
+}
+
 .traffic-widget .download {
   background-color: rgba(166, 227, 161, 0.8);
   border: 0px solid #1e1e2e;
@@ -93,10 +143,9 @@
   padding-top: 2px;
   padding-left: 8px;
   padding-right: 8px;
-  margin-left: 6px;
   font-family: "JetBrainsMono NF";
   font-weight: bold;
-  font-size: 12px;
+  min-width: 90px;
 }
 .traffic-widget .upload {
   background-color: rgba(249, 226, 175, 0.8);
@@ -109,8 +158,17 @@
   margin-left: 6px;
   font-family: "JetBrainsMono NF";
   font-weight: bold;
-  font-size: 12px;
+  min-width: 90px;
 }
+
+.traffic-menu .label {
+  font-size: 12px;
+  font-weight: bold;
+  color: #030305;
+  padding: 2px 12px 0 2px;
+}
+
+
 .traffic-widget .label.alt .download,
 .traffic-widget .label.alt .upload {
   font-size: 16px;
@@ -125,7 +183,6 @@
   border: 0px solid #313244;
   border-radius: 11px;
   color: #cdd6f4;
-  font-family: "JetBrainsMono NF";
   font-size: 12px;
   min-width: 220px;
 }
@@ -138,7 +195,6 @@
   font-size: 12px;
   font-weight: bold;
   color: #cdd6f4;
-  font-family: "JetBrainsMono NF";
 }
 .traffic-menu .header .reset-button {
   font-size: 12px;
@@ -147,7 +203,6 @@
   margin-right: 8px;
   font-weight: bold;
   background-color: transparent;
-  font-family: "JetBrainsMono NF";
   color: #cdd6f4;
   outline: none;
 }
@@ -283,11 +338,11 @@
   background-color: rgba(17, 17, 27, 0.8);
   border: 0px solid #313244;
   border-radius: 11px;
-  margin-left: 6px;
+  margin-left: 0px;
   font-family: "JetBrainsMono NF";
   font-size: 12px;
   font-weight: bold;
-  padding: 8px 10px 6px 10px;
+  padding: 7px 10px 7px 10px;
   outline: none;
 }
 .komorebi-workspaces .ws-btn.populated {
@@ -439,8 +494,8 @@
   background-color: rgba(17, 17, 27, 0.8);
   border: 0px solid #313244;
   border-radius: 11px;
-  margin-left: 6px;
-  padding: 1px 8px 0 8px;
+  margin-left: 10px;
+  padding: 1px 0px 0 0px;
 }
 .systray .button {
   outline: none;
@@ -634,8 +689,7 @@
 .notification-widget .icon {
   font-family: "JetBrainsMono NF";
   color: #89dceb;
-  padding-right: 10px;
-  padding-top: 1px;
+  min-width: 30px;
   font-size: 14px;
   font-weight: bold;
 }
@@ -644,7 +698,7 @@
   color: #89dceb;
   font-size: 12px;
   font-weight: bold;
-  padding-right: 4px;
+  padding-right: 10px;
   padding-top: 2px;
 }
 
@@ -733,7 +787,7 @@
   font-size: 14px;
   font-weight: bold;
   color: #f38ba8;
-  padding: 1px 4px 0 4px;
+  padding: 1px 5px 0 3px;
 }
 .power-menu {
   background-color: rgba(17, 17, 27, 0.8);
