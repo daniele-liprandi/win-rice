@@ -37,13 +37,13 @@ bars:
         - "systray"
         - "komorebi_active_layout"
         - "komorebi_control"
+        - "active_window"
       center:
-        - "komorebi_workspaces"
         - "weather"
         - "clock"
         - "volume"
         - "media"
-        - "active_window"
+        - "komorebi_workspaces"
       right:
         - "disk"
         - "cpu"
@@ -92,6 +92,10 @@ widgets:
       max_length: 56
       max_length_ellipsis: "..."
       monitor_exclusive: true
+      animation:
+        enabled: true
+        type: "fadeInOut"
+        duration: 200
       callbacks:
         on_left: "focus_window"
         on_middle: "do_nothing"
@@ -167,8 +171,13 @@ widgets:
       label_offline: "<span>\ueb96</span>"
       label_default_name: ""
       label_zero_index: false
-      hide_empty_workspaces: true
+      hide_empty_workspaces: false
       hide_if_offline: true
+      animation: true
+      app_icons:
+        enabled_populated: true
+        enabled_active: true
+        size: 14
   media:
     type: "yasb.media.MediaWidget"
     options:
@@ -181,7 +190,7 @@ widgets:
       max_field_size:
         label: 30
         label_alt: 30
-      hide_empty: true
+      hide_empty: false
       show_thumbnail: false
       scrolling_label:
         enabled: false
@@ -261,7 +270,7 @@ widgets:
   clock:
     type: "yasb.clock.ClockWidget"
     options:
-      label: "{%I:%M %p}"
+      label: "{%d %b %Y - %H:%M}"
       label_alt: "{%A, %d %B %Y}"
       update_interval: 1000
       calendar:
@@ -299,7 +308,7 @@ widgets:
     options:
       label: "<span>\uf421</span>{count}"
       label_alt: "{count} Notification(s)"
-      hide_empty: true
+      hide_empty: false
       tooltip: false
       callbacks:
         on_left: "toggle_notification"

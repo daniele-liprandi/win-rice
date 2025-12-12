@@ -23,6 +23,7 @@
 .widget .label {
     padding: 1px 2px 1px 2px;
     font-family: JetBrainsMono NF;
+    font-size: 12px;
 }
 .widget .label.alt {
     padding: 1px 8px 1px 8px;
@@ -33,7 +34,7 @@
 
 /* ACTIVE WINDOW TITLE */
 .active-window-widget {
-  background-color: rgba(17, 17, 27, 0.8);
+  background-color: rgba(250, 179, 135, 0.8);
   border: 0px solid #313244;
   border-radius: 11px;
   margin-left: 6px;
@@ -41,9 +42,14 @@
   padding: 2px 12px 0 12px;
 }
 
+.active-window-widget .label {
+  color: #1e1e2e;
+  font-weight: bold;
+}
+
 /* DISK */
 .disk-widget {
-  background-color: rgba(139, 233, 253, 0.8);
+  background-color: rgba(243, 139, 168, 0.8);
   border: 0px solid #1e1e2e;
   border-radius: 11px;
   margin-left: 6px;
@@ -51,7 +57,7 @@
   width: 75px;
 }
 .disk-widget .label {
-  font-size: 12px;
+  
   font-weight: bold;
   color: #1e1e2e;
   padding: 2px 0 0 0;
@@ -62,7 +68,7 @@
 
 /* CPU */
 .cpu-widget {
-  background-color: rgba(243, 139, 168, 0.8);
+  background-color: rgba(250, 179, 135, 0.8);
   border: 0px solid #1e1e2e;
   border-radius: 11px;
   margin-left: 6px;
@@ -72,7 +78,7 @@
   max-width: 85px;
 }
 .cpu-widget .label {
-  font-size: 12px;
+  
   font-weight: bold;
   color: #1e1e2e;
   padding: 2px 5px 0 0;
@@ -97,10 +103,11 @@
 
 /* MEMORY */
 .memory-widget {
-  background-color: rgba(203, 166, 247, 0.8);
+  background-color: rgba(249, 226, 175, 0.8);
   border: 0px solid #1e1e2e;
   border-radius: 11px;
   outline: none;
+  min-width: 40px;
 }
 .memory-widget .label {
   font-size: 16px;
@@ -108,7 +115,7 @@
   text-align: center;
 }
 .memory-widget .label.alt {
-  font-size: 12px;
+  
   font-weight: bold;
   color: #1e1e2e;
   padding: 2px 6px 0 12px;
@@ -129,10 +136,12 @@
   margin-left: 6px;
   font-weight: bold;
   outline: none;
+  min-width: 40px;
 }
+
 .traffic-widget .label {
   padding: 2px 8px 0 8px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .traffic-widget .download {
@@ -161,11 +170,10 @@
   min-width: 90px;
 }
 
-.traffic-menu .label {
-  font-size: 12px;
+.traffic-widget .icon {
   font-weight: bold;
   color: #030305;
-  padding: 2px 12px 0 2px;
+  font-size: 14px;
 }
 
 
@@ -355,6 +363,11 @@
   color: #1e1e2e;
 }
 
+.komorebi-workspaces .ws-btn .icon {
+  margin-left: 6px;
+}
+
+
 /* MEDIA */
 .media-widget {
   background-color: rgba(245, 194, 231, 0.8);
@@ -367,7 +380,7 @@
   color: #1e1e2e;
   background: transparent;
   font-family: "JetBrainsMono NF";
-  font-size: 12px;
+  
   font-weight: bold;
   padding-left: 10px;
   padding-top: 2px;
@@ -548,7 +561,7 @@
 }
 .weather-card-today .label {
   font-family: "JetBrainsMono NF";
-  font-size: 12px;
+  
   font-weight: bold;
   color: #cdd6f4;
 }
@@ -568,7 +581,7 @@
 .weather-card-day .label {
   font-family: "JetBrainsMono NF";
   font-weight: bold;
-  font-size: 12px;
+  
   color: #cdd6f4;
 }
 
@@ -584,7 +597,7 @@
 .clock-widget .label {
   color: #cdd6f4;
   font-family: "JetBrainsMono NF";
-  font-size: 12px;
+  
   font-weight: bold;
   padding: 0 4px 0 4px;
 }
@@ -651,7 +664,7 @@
 }
 .volume-widget .label {
   font-family: "JetBrainsMono NF";
-  font-size: 12px;
+  
   font-weight: bold;
   color: #cdd6f4;
   padding: 1px 4px 0 4px;
@@ -680,7 +693,7 @@
 
 /* NOTIFICATIONS */
 .notification-widget {
-  background-color: rgba(17, 17, 27, 0.8);
+  background-color: rgba(137, 220, 235, 0.8);
   border: 0px solid #313244;
   border-radius: 11px;
   margin-left: 6px;
@@ -688,15 +701,14 @@
 }
 .notification-widget .icon {
   font-family: "JetBrainsMono NF";
-  color: #89dceb;
+  color: #1e1e2e;
   min-width: 30px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
 }
 .notification-widget .label {
   font-family: "JetBrainsMono NF";
-  color: #89dceb;
-  font-size: 12px;
+  color: #1e1e2e;
   font-weight: bold;
   padding-right: 10px;
   padding-top: 2px;
@@ -704,7 +716,7 @@
 
 /* BLUETOOTH */
 .bluetooth-widget {
-  background-color: rgba(17, 17, 27, 0.8);
+  background-color: rgba(137, 180, 250, 0.8);
   border: 0px solid #313244;
   border-radius: 11px;
   margin-left: 6px;
@@ -715,8 +727,15 @@
   font-family: "JetBrainsMono NF";
   font-size: 14px;
   font-weight: bold;
-  color: #89b4fa;
+  color: #1e1e2e;
   padding: 1px 4px 0 4px;
+}
+
+.bluetooth-widget .icon {
+  font-family: "JetBrainsMono NF";
+  font-size: 16px;
+  color: #ffffff;
+  padding-top: 2px;
 }
 
 /* KOMOREBI CONTROL */
@@ -756,7 +775,7 @@
 /* POWER PLAN */
 .power-widget,
 .power-plan-widget {
-  background-color: rgba(17, 17, 27, 0.8);
+  background-color: rgba(203, 166, 247, 0.8);
   border: 0px solid #313244;
   border-radius: 11px;
   margin-left: 6px;
@@ -768,7 +787,7 @@
   font-family: "JetBrainsMono NF";
   font-size: 14px;
   font-weight: bold;
-  color: #a6e3a1;
+  color: #1e1e2e;
   padding: 1px 4px 0 4px;
 }
 
@@ -868,7 +887,7 @@
 
 /* NOTES WIDGET */
 .notes-widget {
-  background-color: rgba(17, 17, 27, 0.8);
+  background-color: rgba(148, 226, 213, 0.8);
   border: 0px solid #313244;
   border-radius: 11px;
   margin-left: 6px;
@@ -879,13 +898,13 @@
   font-family: "JetBrainsMono NF";
   font-size: 14px;
   font-weight: bold;
-  color: #f5c2e7;
+  color: #1e1e2e;
   padding: 1px 4px 0 4px;
 }
 .notes-widget .icon {
   font-family: "JetBrainsMono NF";
   font-size: 16px;
-  color: #f5c2e7;
+  color: #1e1e2e;
   padding-top: 2px;
 }
 
@@ -925,7 +944,7 @@
   background-color: rgba(243, 139, 168, 0.2);
 }
 .notes-menu .note-item .title {
-  font-size: 13px;
+  font-size: 12px;
   font-family: "JetBrainsMono NF";
   color: #cdd6f4;
 }
