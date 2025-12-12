@@ -1,0 +1,150 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.28/schema.json",
+  "app_specific_configuration_path": "$Env:USERPROFILE/.config/komorebi/applications.json",
+  "window_hiding_behaviour": "Cloak",
+  "cross_monitor_move_behaviour": "Insert",
+  "default_workspace_padding": 2,
+  "default_container_padding": 4,
+  "mouse_follows_focus": false,
+  "border": true,
+  "border_width": 5,
+  "border_offset": 0,
+  "border_colours": {
+    "single": "#e61ea3",
+    "stack": "#00a542",
+    "monocle": "#ff3399",
+    "unfocused": "#a57e376c"
+  },
+  "transparency": true,
+  "transparency_alpha": 240,
+  "animation": {
+    "enabled": true,
+    "duration": 250,
+    "fps": 60,
+    "style": "EaseOutSine"
+  },
+  "manage_rules": [
+    [
+      {
+        "kind": "Exe",
+        "id": "steamwebhelper.exe",
+        "matching_strategy": "Equals"
+      },
+      {
+        "kind": "Title",
+        "id": "notificationtoasts_",
+        "matching_strategy": "DoesNotContain"
+      }
+    ],
+    {
+      "kind": "Exe",
+      "id": "upc.exe",
+      "matching_strategy": "Equals"
+    }
+  ],
+  "floating_applications": [
+    [
+      {
+        "kind": "Class",
+        "id": "SDL_app",
+        "matching_strategy": "Equals"
+      },
+      {
+        "kind": "Exe",
+        "id": "steamwebhelper.exe",
+        "matching_strategy": "DoesNotEqual"
+      }
+    ],
+    {
+      "kind": "Class",
+      "id": "Visual Studio Code",
+      "matching_strategy": "Equals"
+    }
+  ],
+  "monitors": [
+    {
+      "workspaces": [
+        {
+          "name": "I",
+          "layout": "BSP"
+        },
+        {
+          "name": "II",
+          "layout": "BSP"
+        },
+        {
+          "name": "III",
+          "layout": "BSP"
+        },
+        {
+          "name": "IV",
+          "layout": "BSP"
+        },
+        {
+          "name": "V",
+          "layout": "BSP"
+        },
+        {
+          "name": "VI",
+          "layout": "BSP"
+        }
+      ]
+    },
+    {
+      "workspaces": [
+        {
+          "name": "I",
+          "layout": "BSP"
+        },
+        {
+          "name": "II",
+          "layout": "BSP"
+        },
+        {
+          "name": "III",
+          "layout": "BSP"
+        },
+        {
+          "name": "IV",
+          "layout": "BSP"
+        },
+        {
+          "name": "V",
+          "layout": "BSP"
+        },
+        {
+          "name": "VI",
+          "layout": "BSP"
+        }
+      ]
+    },
+    {
+      "workspaces": [
+        {
+          "name": "I",
+          "layout": "BSP"
+        },
+        {
+          "name": "II",
+          "layout": "BSP"
+        },
+        {
+          "name": "III",
+          "layout": "BSP"
+        },
+        {
+          "name": "IV",
+          "layout": "BSP"
+        },
+        {
+          "name": "V",
+          "layout": "BSP"
+        },
+        {
+          "name": "VI",
+          "layout": "BSP"
+        }
+      ]
+    }
+  ]
+}
