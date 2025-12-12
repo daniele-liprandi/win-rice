@@ -1,1 +1,2 @@
-# win-rice
+# Windows Komorebi + YASB + Windhawk configs
+
