@@ -1,0 +1,48 @@
+/**
+ * Customize color labels of reader
+ * @author windingwind
+ * @usage Set the `Event` to `Program Startup`; Edit the action script below to replace the labels.
+ * @link https://github.com/windingwind/zotero-actions-tags/discussions/211
+ * @see https://github.com/windingwind/zotero-actions-tags/discussions/211
+ */
+
+// Edit labels below
+const replaceLabelMap = {
+  "#ffd400": "Definition",
+  "#ff6666": "Historical",
+  "#5fb236": "Evidence",
+  "#2ea8e5": "Suggestion",
+  "#a28ae5": "Example",
+  "#e56eee": "Context",
+  "#f19837": "Action",
+  "#aaaaaa": "Quote",
+};
+
+function hackContextMenuLabel(event) {
+  setTimeout(() => {
+    event.reader._iframeWindow?.document
+      .querySelectorAll(".context-menu .row")
+      .forEach((e) => {
+        const color = e.querySelector("path[fill]")?.getAttribute("fill");
+        if (!color) {
+          return;
+        }
+        if (color in replaceLabelMap) {
+          e.innerHTML =
+            e.querySelector("svg")?.outerHTML + replaceLabelMap[color];
+        }
+      });
+  }, 10);
+}
+
+Zotero.Reader.registerEventListener(
+  "createAnnotationContextMenu",
+  hackContextMenuLabel,
+  "zoterotag@euclpts.com"
+);
+
+Zotero.Reader.registerEventListener(
+  "createColorContextMenu",
+  hackContextMenuLabel,
+  "zoterotag@euclpts.com"
+);
